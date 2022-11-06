@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Text style={styles.textContainer.greetings}>Welcome back!</Text>
+                <Text style={styles.greetings}>Welcome back!</Text>
                 <Avatar />
             </View>
             <Text style={styles.username}>Ralph Placide</Text>
@@ -24,12 +24,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        
-        greetings: {
-            fontSize: 26,
-            fontWeight: '600',
-            color: '#131313'
-        },
+    },
+    greetings: {
+        fontSize: 26,
+        fontWeight: '600',
+        color: '#3b3d56'
     },
     username: {
         fontSize: 22,
