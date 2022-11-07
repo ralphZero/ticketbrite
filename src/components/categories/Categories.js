@@ -6,13 +6,16 @@ import { categories } from '../../utils/categories';
 
 const Categories = () => {
     const renderItem = ({ item }) => (
-        <CategoryItem title={item.title} />
+        <View style={{ paddingStart: item.id === 0 ? 32 : 0 }}>
+            <CategoryItem title={item.title} />
+        </View>
     )
 
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Event Categories</Text>
             <FlatList
+
                 horizontal={true}
                 data={categories}
                 renderItem={renderItem}
@@ -27,6 +30,7 @@ const styles = StyleSheet.create({
         marginVertical: 12,
     },
     header: {
+        paddingHorizontal: 32,
         color: '#3b3d56',
         fontSize: 18,
         fontWeight: 'bold',

@@ -22,11 +22,12 @@ const styles = StyleSheet.create({
     },
     container: {
         marginVertical: 12,
+        marginHorizontal: 32,
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 2,
         borderColor: '#dfdfdf',
-        borderRadius: 50
+        borderRadius: 50,
     }
 })
 

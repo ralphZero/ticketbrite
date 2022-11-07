@@ -18,7 +18,8 @@ const Header = () => {
 const styles = StyleSheet.create({
     container: {
         paddingTop: 32,
-        marginBottom: 24
+        marginBottom: 24,
+        marginHorizontal: 32,
     },
     textContainer: {
         flexDirection: 'row',
