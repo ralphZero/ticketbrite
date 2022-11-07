@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import Categories from '../components/categories/Categories';
-import EventGroupLabel from '../components/event/EventGroupLabel';
+import EventLists from '../components/event/EventLists';
 import Header from '../components/home/Header';
 import Searchbar from '../components/Searchbar';
 
@@ -11,7 +11,7 @@ const Home = () => {
             <Header />
             <Searchbar />
             <Categories />
-            <EventGroupLabel title='Popular Event' />
+            <EventLists />
         </ScrollView>
     );
 }

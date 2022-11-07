@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
         marginVertical: 24,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
     },
     header: {
         color: '#3b3d56',
