@@ -3,7 +3,7 @@ import {View, Dimensions, Image, Text, StyleSheet} from 'react-native';
 import { Avatar, Icon } from 'react-native-elements';
 
 const EventItem = ({ url }) => {
-    // const url = 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80';
+    
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{uri: url}} />
