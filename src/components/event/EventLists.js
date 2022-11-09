@@ -8,8 +8,10 @@ import { events } from '../../utils/events';
 const EventLists = () => {
     const cardWidth = Dimensions.get('window').width - 64;
     const cardOffsets = events.map((_, index) => {
-        return (cardWidth * index) + (18 * index)
-    })
+        return (cardWidth * index) + (8 * index)
+    });
+    const firstItemPadding = 18;
+
     return (
         <View>
             <EventGroupLabel title='Popular Event' />
@@ -20,7 +22,7 @@ const EventLists = () => {
                 snapToOffsets={cardOffsets}
                 data={events} 
                 renderItem={({ item }) => (
-                    <View style={{ paddingStart: item.id === 0 ? 32 : 0 }}>
+                    <View style={{ paddingStart: item.id === 0 ? firstItemPadding : 0 }}>
                         <EventItem url={item.cover}/>
                     </View>
                 )} 
@@ -34,7 +36,7 @@ const EventLists = () => {
                 decelerationRate='fast'
                 snapToOffsets={cardOffsets}
                 renderItem={({ item }) => (
-                    <View style={{ paddingStart: item.id === 0 ? 32 : 0 }}>
+                    <View style={{ paddingStart: item.id === 0 ? firstItemPadding : 0 }}>
                         <EventItem url={item.cover}/>
                     </View>
                 )} 

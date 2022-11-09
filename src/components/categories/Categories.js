@@ -5,8 +5,10 @@ import CategoryItem from './CategoryItem';
 import { categories } from '../../utils/categories';
 
 const Categories = () => {
+    const firstItemPadding = 18;
+
     const renderItem = ({ item }) => (
-        <View style={{ paddingStart: item.id === 0 ? 32 : 0 }}>
+        <View style={{ paddingStart: item.id === 0 ? firstItemPadding : 0 }}>
             <CategoryItem title={item.title} />
         </View>
     )
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
         marginVertical: 12,
     },
     header: {
-        paddingHorizontal: 32,
+        paddingHorizontal: 18,
         color: '#3b3d56',
         fontSize: 18,
         fontWeight: 'bold',

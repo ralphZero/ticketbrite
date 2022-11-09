@@ -14,7 +14,7 @@ const EventGroupLabel = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 32,
+        paddingHorizontal: 18,
         marginVertical: 24,
         flexDirection: 'row',
         justifyContent: 'space-between',
