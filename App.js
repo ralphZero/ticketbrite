@@ -7,7 +7,7 @@ import Explore from './src/pages/Explore';
 import Tickets from './src/pages/Tickets';
 import Settings from './src/pages/Settings';
 import { useFonts } from 'expo-font'
-import { TabBarIcon } from './src/utils/icons/TabBarIcon';
+import { JamIcon } from './src/utils/icons/JamIcon';
 
 export default function App() {
 
@@ -38,7 +38,7 @@ export default function App() {
       } else {
         iconName = focused ? 'cog-f' : 'cog';
       }
-      return <TabBarIcon name={iconName} color={customColor} size={size} />
+      return <JamIcon name={iconName} color={customColor} size={size} />
     }
   });
 

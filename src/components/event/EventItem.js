@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Dimensions, Image, Text, StyleSheet} from 'react-native';
-import { Avatar, Icon } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
+import { JamIcon } from '../../utils/icons/JamIcon';
 
 const EventItem = ({ url }) => {
     
@@ -13,7 +14,7 @@ const EventItem = ({ url }) => {
                         <Text style={styles.badgeText}>2k participant</Text>
                     </View>
                     <View style={styles.badge}>
-                        <Icon type='antdesign' name='hearto' size={18}/>
+                        <JamIcon name='heart' size={18}/>
                     </View>
                 </View>
                 <View style={styles.card}>
