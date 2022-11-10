@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Dimensions, Image, Text, StyleSheet} from 'react-native';
 import { Avatar } from 'react-native-elements';
-import { JamIcon } from '../../utils/icons/JamIcon';
+import LikeButton from './LikeButton';
 
 const EventItem = ({ url }) => {
     
@@ -13,9 +13,7 @@ const EventItem = ({ url }) => {
                     <View style={styles.badge}>
                         <Text style={styles.badgeText}>2k participant</Text>
                     </View>
-                    <View style={styles.badge}>
-                        <JamIcon name='heart' size={18}/>
-                    </View>
+                    <LikeButton />
                 </View>
                 <View style={styles.card}>
                     <Text style={{ fontWeight: 'bold' }}>Artistics Museum 2022</Text>
