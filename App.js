@@ -30,13 +30,13 @@ export default function App() {
       const customColor = focused ? '#3e63f4' : '#333333';
 
       if(route.name === 'home') {
-        iconName = focused ? 'house-fill' : 'house';
+        iconName = focused ? 'home-f' : 'home';
       } else if(route.name === 'explore') {
-        iconName = focused ? 'compass-fill' : 'compass';
+        iconName = focused ? 'compass-f' : 'compass';
       } else if(route.name === 'tickets') {
-        iconName = focused ? 'ticket-perforated-fill' : 'ticket-perforated';
+        iconName = focused ? 'ticket-f' : 'ticket';
       } else {
-        iconName = focused ? 'gear-fill' : 'gear';
+        iconName = focused ? 'cog-f' : 'cog';
       }
       return <TabBarIcon name={iconName} color={customColor} size={size} />
     }
