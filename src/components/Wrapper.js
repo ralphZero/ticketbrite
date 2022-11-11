@@ -3,11 +3,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../src/pages/Home';
-import Explore from '../src/pages/Explore';
-import Tickets from '../src/pages/Tickets';
-import Settings from '../src/pages/Settings';
-import { JamIcon } from '../src/utils/icons/JamIcon';
+import Home from '../pages/Home';
+import Explore from '../pages/Explore';
+import Tickets from '../pages/Tickets';
+import Settings from '../pages/Settings';
+import { JamIcon } from '../utils/icons/JamIcon';
 
 const Wrapper = () => {
   const Tab = createBottomTabNavigator();
