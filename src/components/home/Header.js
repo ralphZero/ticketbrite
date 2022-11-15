@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 32,
         marginBottom: 24,
-        marginHorizontal: 18,
     },
     textContainer: {
         flexDirection: 'row',

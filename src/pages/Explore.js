@@ -9,11 +9,15 @@ import EventItem from '../components/event/EventItem';
 const Explore = () => {
     return (
         <View style={styles.wrapper}>
-            <Header title='Explore' />
-            <Searchbar />
-            <Categories />
             <View style={styles.list}>
                 <FlatList
+                    ListHeaderComponent={
+                        <>
+                            <Header title='Explore' />
+                            <Searchbar />
+                            <Categories showHeader={false} />
+                        </>
+                    }
                     data={events}
                     keyExtractor={(event) => event.id}
                     renderItem={({ item }) => (

@@ -4,7 +4,7 @@ import CategoryItem from './CategoryItem';
 
 import { categories } from '../../utils/categories';
 
-const Categories = () => {
+const Categories = ({ showHeader = true }) => {
     const firstItemPadding = 18;
 
     const renderItem = ({ item }) => (
@@ -15,7 +15,7 @@ const Categories = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Event Categories</Text>
+            {showHeader ? <Text style={styles.header}>Event Categories</Text> : null}
             <FlatList
 
                 horizontal={true}
