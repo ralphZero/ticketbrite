@@ -2,15 +2,14 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Avatar from './Avatar'
 
-const Header = () => {
+const Header = ({title = 'Welcome back!', showUser = false}) => {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Text style={styles.greetings}>Welcome back!</Text>
-                <Avatar />
+                <Text style={styles.greetings}>{title}</Text>
+                {showUser ? <Avatar /> : null}
             </View>
-            <Text style={styles.username}>Ralph Placide</Text>
-            
+            {showUser ? <Text style={styles.username}>Ralph Placide</Text> : null}
         </View>
     )
 }

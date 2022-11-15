@@ -29,8 +29,7 @@ const EventItem = ({ url }) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: Dimensions.get('window').width - 64,
-        marginEnd: 18,
+       flex: 1,
     },
     image: {
         flex: 1,

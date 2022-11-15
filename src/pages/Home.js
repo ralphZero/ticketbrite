@@ -8,7 +8,7 @@ import Searchbar from '../components/Searchbar';
 const Home = () => {
     return (
         <ScrollView style={styles.container}>
-            <Header />
+            <Header showUser={true}/>
             <Searchbar />
             <Categories />
             <EventLists />
