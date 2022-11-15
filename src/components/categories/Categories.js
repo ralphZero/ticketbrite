@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import CategoryItem from './CategoryItem';
 
@@ -6,10 +6,15 @@ import { categories } from '../../utils/categories';
 
 const Categories = ({ showHeader = true }) => {
     const firstItemPadding = 18;
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    const renderItem = ({ item }) => (
-        <View style={{ paddingStart: item.id === 0 ? firstItemPadding : 0 }}>
-            <CategoryItem title={item.title} />
+    const onChangeItem = (index) => {
+        setActiveIndex(index)
+    }
+
+    const renderItem = ({ item, index }) => (
+        <View style={{ paddingStart: index === 0 ? firstItemPadding : 0 }}>
+            <CategoryItem onChange={() => onChangeItem(index)} active={activeIndex === index ? true : false} title={item.title} />
         </View>
     )
 
@@ -17,7 +22,6 @@ const Categories = ({ showHeader = true }) => {
         <View style={styles.container}>
             {showHeader ? <Text style={styles.header}>Event Categories</Text> : null}
             <FlatList
-
                 horizontal={true}
                 data={categories}
                 renderItem={renderItem}

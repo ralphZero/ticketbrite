@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
-const CategoryItem = ({ title }) => {
+const CategoryItem = ({ title, active = false, onChange }) => {
     return (
-        <View style={styles.wrapper}>
-            <Text style={styles.content}>{title}</Text>
-        </View>
+        <Pressable onPress={onChange}>
+            <View style={[styles.wrapper, active ? { borderColor: '#3f62f1', backgroundColor: '#3f62f1' } : {}]}>
+                <Text style={[styles.content, active ? { color: '#ffffff' } : {}]}>{title}</Text>
+            </View>
+        </Pressable>
     );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import Searchbar from '../components/Searchbar';
 import Header from '../components/home/Header';
 import Categories from '../components/categories/Categories';
@@ -9,24 +9,24 @@ import EventItem from '../components/event/EventItem';
 const Explore = () => {
     return (
         <View style={styles.wrapper}>
-            <View style={styles.list}>
-                <FlatList
-                    ListHeaderComponent={
-                        <>
+            <FlatList
+                ListHeaderComponent={
+                    <>
+                        <View style={{ marginHorizontal: 18 }}>
                             <Header title='Explore' />
                             <Searchbar />
-                            <Categories showHeader={false} />
-                        </>
-                    }
-                    data={events}
-                    keyExtractor={(event) => event.id}
-                    renderItem={({ item }) => (
-                        <View style={styles.listItem}>
-                            <EventItem url={item.cover} />
                         </View>
-                    )}
-                />
-            </View>
+                        <Categories showHeader={false} />
+                    </>
+                }
+                data={events}
+                keyExtractor={(event) => event.id}
+                renderItem={({ item }) => (
+                    <View style={styles.listItem}>
+                        <EventItem url={item.cover} />
+                    </View>
+                )}
+            />
         </View>
     );
 }
@@ -35,11 +35,9 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
     },
-    list: {
-        marginHorizontal: 18,
-    },
     listItem: {
-        marginBottom: 18
+        marginBottom: 18,
+        marginHorizontal: 18,
     }
 })
 
