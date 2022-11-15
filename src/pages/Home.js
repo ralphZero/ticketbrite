@@ -9,7 +9,6 @@ const Home = () => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.space}>
-                <Header showUser={true}/>
                 <Searchbar />
             </View>
             <Categories  />

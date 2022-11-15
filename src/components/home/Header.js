@@ -2,22 +2,28 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Avatar from './Avatar'
 
-const Header = ({title = 'Welcome back!', showUser = false}) => {
+const Header = ({title}) => {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Text style={styles.greetings}>{title}</Text>
-                {showUser ? <Avatar /> : null}
+                <Text style={styles.greetings}>{title === 'home' ? 'Welcome back!' : capitalize(title)}</Text>
+                {title === 'home' ? <Avatar /> : null}
             </View>
-            {showUser ? <Text style={styles.username}>Ralph Placide</Text> : null}
+            {title === 'home' ? <Text style={styles.username}>Ralph Placide</Text> : null}
         </View>
     )
+}
+
+const capitalize = (str) => {
+    const result = str.charAt(0).toUpperCase() + str.slice(1);
+    return result
 }
 
 const styles = StyleSheet.create({
     container: {
         paddingTop: 32,
         marginBottom: 24,
+        marginHorizontal: 18,
     },
     textContainer: {
         flexDirection: 'row',

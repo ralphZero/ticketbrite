@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import Searchbar from '../components/Searchbar';
-import Header from '../components/home/Header';
 import Categories from '../components/categories/Categories';
 import { events } from '../utils/events';
 import EventItem from '../components/event/EventItem';
@@ -13,7 +12,6 @@ const Explore = () => {
                 ListHeaderComponent={
                     <>
                         <View style={{ marginHorizontal: 18 }}>
-                            <Header title='Explore' />
                             <Searchbar />
                         </View>
                         <Categories showHeader={false} />

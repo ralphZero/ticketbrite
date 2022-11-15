@@ -8,14 +8,16 @@ import Explore from '../pages/Explore';
 import Tickets from '../pages/Tickets';
 import Settings from '../pages/Settings';
 import { JamIcon } from '../utils/icons/JamIcon';
+import Header from './home/Header';
 
 const Wrapper = () => {
   const Tab = createBottomTabNavigator();
 
   const options = ({ route }) => ({
-    headerShown: false,
+    headerShown: true,
+    header: ({ route }) => (<Header title={route.name} showUser />),
     tabBarShowLabel: false,
-    tabBarIcon: ({focused, color, size}) => {
+    tabBarIcon: ({focused, size}) => {
       let iconName;
       const customColor = focused ? '#3e63f4' : '#333333';
 
