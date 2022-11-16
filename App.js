@@ -38,7 +38,7 @@ export default function App() {
   }
 
   return (
-    <View style={{flex: 1}} onLayout={onLayout}>
+    <View style={{flex: 1, backgroundColor: 'red'}} onLayout={onLayout}>
       <Wrapper />
     </View>
   );
