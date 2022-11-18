@@ -21,7 +21,7 @@ const capitalize = (str) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 32,
+        paddingTop: 24,
         marginBottom: 24,
         marginHorizontal: 18,
     },

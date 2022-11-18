@@ -10,6 +10,7 @@ import Tickets from '../pages/Tickets';
 import Settings from '../pages/Settings';
 import { JamIcon } from '../utils/icons/JamIcon';
 import Header from './home/Header';
+import HomeStack from './navs/HomeStack';
 
 const Wrapper = () => {
   const Tab = createBottomTabNavigator();
@@ -41,11 +42,11 @@ const Wrapper = () => {
       <SafeAreaView style={styles.container}>
         <LinearGradient 
           style={styles.gradientContainer} 
-          colors={['#ffffff', '#f8f8f8']}
-          locations={[0.2, 0.01]}
+          colors={['#ffffff', '#f3f3f3']}
+          locations={[0.8, 1]}
           >
           <Tab.Navigator sceneContainerStyle={{ backgroundColor: 'transparent' }} screenOptions={options}>
-            <Tab.Screen name='home' component={Home} />
+            <Tab.Screen name='home' component={HomeStack} />
             <Tab.Screen name='explore' component={Explore} />
             <Tab.Screen name='tickets' component={Tickets} />
             <Tab.Screen name='settings' component={Settings} />

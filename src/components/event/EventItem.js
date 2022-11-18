@@ -1,35 +1,37 @@
 import React from 'react';
-import {View, Dimensions, Image, Text, StyleSheet} from 'react-native';
+import { View, Pressable, Image, Text, StyleSheet } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import LikeButton from './LikeButton';
 
-const EventItem = ({ url }) => {
-    
+const EventItem = ({ url, onPress }) => {
+
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={{uri: url}} />
-            <View style={styles.overlaylayer}>
-                <View style={styles.bagdeGroup}>
-                    <View style={styles.badge}>
-                        <Text style={styles.badgeText}>2k participant</Text>
+        <Pressable onPress={onPress}>
+            <View style={styles.container}>
+                <Image style={styles.image} source={{ uri: url }} />
+                <View style={styles.overlaylayer}>
+                    <View style={styles.bagdeGroup}>
+                        <View style={styles.badge}>
+                            <Text style={styles.badgeText}>2k participant</Text>
+                        </View>
+                        <LikeButton />
                     </View>
-                    <LikeButton />
-                </View>
-                <View style={styles.card}>
-                    <Text style={{ fontWeight: 'bold' }}>Artistics Museum 2022</Text>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 12 }}>
-                        <Avatar size={24} rounded source={{uri: "https://randomuser.me/api/portraits/men/35.jpg"}}/>
-                        <Text style={{ marginStart: 8, fontSize: 12, fontWeight: 'bold', color: '#3b3d56' }}>Ralph Placide</Text>
+                    <View style={styles.card}>
+                        <Text style={{ fontWeight: 'bold' }}>Artistics Museum 2022</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 12 }}>
+                            <Avatar size={24} rounded source={{ uri: "https://randomuser.me/api/portraits/men/35.jpg" }} />
+                            <Text style={{ marginStart: 8, fontSize: 12, fontWeight: 'bold', color: '#3b3d56' }}>Ralph Placide</Text>
+                        </View>
                     </View>
                 </View>
             </View>
-        </View>
+        </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-       flex: 1,
+        flex: 1,
     },
     image: {
         flex: 1,
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
         padding: 12,
         justifyContent: 'space-between'
     },
-    bagdeGroup:{
+    bagdeGroup: {
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         shadowColor: '#171717',
-        shadowOffset: {width: 0, height: 4},
+        shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.2,
         shadowRadius: 3,
     },
