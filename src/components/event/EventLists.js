@@ -6,7 +6,7 @@ import EventItem from './EventItem';
 import { events } from '../../utils/events';
 
 
-const EventLists = () => {
+const EventLists = ({ onEventPressed }) => {
     const cardWidth = Dimensions.get('window').width - 64;
     const cardOffsets = events.map((_, index) => {
         return (cardWidth * index) + (8 * index)
@@ -25,7 +25,7 @@ const EventLists = () => {
                 data={events} 
                 renderItem={({ item }) => (
                     <View style={[styles.container, {paddingStart: item.id === 0 ? firstItemPadding : 0}]}>
-                        <EventItem url={item.cover}/>
+                        <EventItem onPress={onEventPressed} url={item.cover}/>
                     </View>
                 )} 
                 keyExtractor={(event) => event.id}
@@ -39,7 +39,7 @@ const EventLists = () => {
                 snapToOffsets={cardOffsets}
                 renderItem={({ item }) => (
                     <View style={[styles.container, { paddingStart: item.id === 0 ? firstItemPadding : 0 }]}>
-                        <EventItem url={item.cover}/>
+                        <EventItem onPress={onEventPressed} url={item.cover}/>
                     </View>
                 )} 
                 keyExtractor={(event) => event.id}

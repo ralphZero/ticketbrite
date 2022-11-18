@@ -4,14 +4,18 @@ import Categories from '../components/categories/Categories';
 import EventLists from '../components/event/EventLists';
 import Searchbar from '../components/Searchbar';
 
-const Home = ({ navigator }) => {
+const Home = ({ navigation }) => {
+    const onEventSelected = () => {
+        navigation.navigate('event-screen');
+    }
+
     return (
         <ScrollView style={styles.container}>
             <View style={styles.space}>
                 <Searchbar />
             </View>
             <Categories  />
-            <EventLists />
+            <EventLists onEventPressed={onEventSelected} />
         </ScrollView>
     );
 }
