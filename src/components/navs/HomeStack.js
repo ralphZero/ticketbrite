@@ -7,7 +7,7 @@ import Event from '../../pages/Event';
 const HomeStack = () => {
     const HomeStack = createNativeStackNavigator();
     const options = ({ route }) => ({
-        headerShown: true,
+        headerShown: false,
         contentStyle: {
             backgroundColor: 'transparent',
         }
