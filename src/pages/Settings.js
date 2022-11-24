@@ -1,11 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import Header from '../components/home/Header';
 
 const Settings = () => {
     return (
-        <View style={styles.wrapper}>
-            <Text>Settings</Text>
-        </View>
+        <>
+            <Header title="settings" />
+            <View style={styles.wrapper}>
+                <Text>Settings</Text>
+            </View>
+        </>
     );
 }
 

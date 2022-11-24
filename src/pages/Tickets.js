@@ -1,11 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import Header from '../components/home/Header';
 
 const Tickets = () => {
     return (
-        <View style={styles.wrapper}>
-            <Text>Tickets</Text>
-        </View>
+        <>
+            <Header title="tickets" showUser/>
+            <View style={styles.wrapper}>
+                <Text>Tickets</Text>
+            </View>
+        </>
     );
 }
 

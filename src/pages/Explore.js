@@ -4,10 +4,12 @@ import Searchbar from '../components/Searchbar';
 import Categories from '../components/categories/Categories';
 import { events } from '../utils/events';
 import EventItem from '../components/event/EventItem';
+import Header from '../components/home/Header';
 
 const Explore = () => {
     return (
         <View style={styles.wrapper}>
+            <Header title="explore" showUser/>
             <FlatList
                 ListHeaderComponent={
                     <>

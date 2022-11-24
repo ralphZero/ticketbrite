@@ -16,8 +16,7 @@ const Wrapper = () => {
   const Tab = createBottomTabNavigator();
 
   const options = ({ route }) => ({
-    headerShown: true,
-    header: ({ route }) => (<Header title={route.name} showUser />),
+    headerShown: false,
     tabBarShowLabel: false,
     tabBarIcon: ({ focused, size }) => {
       let iconName;
