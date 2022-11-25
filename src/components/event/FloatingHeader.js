@@ -6,13 +6,13 @@ import FloatingButton from './FloatingButton';
 import { JamIcon } from '../../utils/icons/JamIcon';
 
 
-const FloatingHeader = ({ back, navigation }) => {
+const FloatingHeader = ({ navigation }) => {
     const [status, setStatus] = useState(false);
     
     const insets = useSafeAreaInsets();
 
     const onBackPressed = () => {
-       return back ? navigation.goBack() : null
+       navigation.goBack()
     }
 
     return (

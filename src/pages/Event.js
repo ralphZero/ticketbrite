@@ -1,14 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {ScrollView, Image, StyleSheet, Dimensions} from 'react-native';
 import FloatingHeader from '../components/event/FloatingHeader';
 
 const Event = (props) => {
+    const { route } = props;
+    const url = route.params.cover;
+
     return (
         <>
             <FloatingHeader {...props} />
-            <View style={styles.container}>
-                <Text>Event Page</Text>
-            </View>
+            <ScrollView style={styles.container}>
+                <Image style={styles.imageBox} source={{uri: url}}/>
+            </ScrollView>
         </>
     );
 }
@@ -17,6 +20,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#ffffff',
         flex: 1,
+    },
+    imageBox: {
+        width: '100%',
+        height: Dimensions.get('window').height * 0.5,
     }
 })
 

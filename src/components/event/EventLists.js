@@ -4,6 +4,7 @@ import EventGroupLabel from './EventGroupLabel';
 import EventItem from './EventItem';
 
 import { events } from '../../utils/events';
+import { values } from '../../utils/constants';
 
 
 const EventLists = ({ onEventPressed }) => {
@@ -12,7 +13,7 @@ const EventLists = ({ onEventPressed }) => {
         return (cardWidth * index) + (8 * index)
     });
 
-    const firstItemPadding = 18;
+    const firstItemPadding = values.size.PADDING;
 
     return (
         <View>
@@ -25,7 +26,7 @@ const EventLists = ({ onEventPressed }) => {
                 data={events} 
                 renderItem={({ item }) => (
                     <View style={[styles.container, {paddingStart: item.id === 0 ? firstItemPadding : 0}]}>
-                        <EventItem onPress={onEventPressed} url={item.cover}/>
+                        <EventItem onPress={() => onEventPressed(item)} url={item.cover}/>
                     </View>
                 )} 
                 keyExtractor={(event) => event.id}
@@ -39,7 +40,7 @@ const EventLists = ({ onEventPressed }) => {
                 snapToOffsets={cardOffsets}
                 renderItem={({ item }) => (
                     <View style={[styles.container, { paddingStart: item.id === 0 ? firstItemPadding : 0 }]}>
-                        <EventItem onPress={onEventPressed} url={item.cover}/>
+                        <EventItem onPress={() => onEventPressed(item)} url={item.cover}/>
                     </View>
                 )} 
                 keyExtractor={(event) => event.id}
@@ -50,8 +51,8 @@ const EventLists = ({ onEventPressed }) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: Dimensions.get('window').width - 18,
-        marginEnd: 18,
+        width: Dimensions.get('window').width - values.size.MARGIN,
+        marginEnd: values.size.MARGIN,
     }
 })
 

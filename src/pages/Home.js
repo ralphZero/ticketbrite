@@ -8,8 +8,8 @@ import Searchbar from '../components/Searchbar';
 import { values } from '../utils/constants';
 
 const Home = ({ navigation }) => {
-    const onEventSelected = () => {
-        navigation.navigate('event-screen');
+    const onEventSelected = (item) => {
+        navigation.navigate('event-screen', {...item});
     }
 
     return (

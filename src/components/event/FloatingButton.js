@@ -16,7 +16,7 @@ const FloatingButton = ({ onPress, children }) => {
 const styles = StyleSheet.create({
     badge: {
         borderRadius: 100,
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffffc8',
         padding: 12,
         justifyContent: 'center',
         alignItems: 'center',
