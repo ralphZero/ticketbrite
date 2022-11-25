@@ -1,4 +1,4 @@
-export const global = {
+export const values = {
     size: {
         MARGIN: 18,
         PADDING: 18,

@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
-import { global } from '../../utils/constants';
+import {View, StyleSheet, StatusBar, Platform} from 'react-native';
+import { values } from '../../utils/constants';
 import FloatingButton from './FloatingButton';
 import { JamIcon } from '../../utils/icons/JamIcon';
 
-const FloatingHeader = () => {
+const FloatingHeader = ({ back, navigation }) => {
     const [status, setStatus] = useState(false);
 
     const onBackPressed = () => {
-        console.log('back!!');
+       return back ? navigation.goBack() : null
     }
 
     return (
@@ -28,8 +28,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: global.size.PADDING,
-        backgroundColor: 'transparent',
+        paddingHorizontal: values.size.PADDING,
+        backgroundColor: 'blue',
+        width: '100%',
+        zIndex: 10,
     }
 })
 

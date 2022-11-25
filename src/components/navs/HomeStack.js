@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import { StyleSheet} from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../../pages/Home';
 import Event from '../../pages/Event';
@@ -9,8 +9,7 @@ const HomeStack = () => {
     const HomeStack = createNativeStackNavigator();
     const options = ({ route }) => ({
         headerShown: route.name === 'event-screen',
-        title: route.params?.title || 'Event',
-        header: ({route}) => <FloatingHeader />,
+        header: (props) => <FloatingHeader {...props} />,
         contentStyle: {
             backgroundColor: 'transparent',
         }

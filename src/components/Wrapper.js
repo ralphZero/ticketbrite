@@ -1,15 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { LinearGradient } from 'expo-linear-gradient';
-import Home from '../pages/Home';
-import Explore from '../pages/Explore';
+import Discover from '../pages/Discover';
 import Tickets from '../pages/Tickets';
 import Settings from '../pages/Settings';
 import { JamIcon } from '../utils/icons/JamIcon';
-import Header from './home/Header';
 import HomeStack from './navs/HomeStack';
 
 const Wrapper = () => {
@@ -24,7 +22,7 @@ const Wrapper = () => {
 
       if (route.name === 'home') {
         iconName = focused ? 'home-f' : 'home';
-      } else if (route.name === 'explore') {
+      } else if (route.name === 'Discover') {
         iconName = focused ? 'compass-f' : 'compass';
       } else if (route.name === 'tickets') {
         iconName = focused ? 'ticket-f' : 'ticket';
@@ -36,30 +34,29 @@ const Wrapper = () => {
   });
 
   return (
-    <NavigationContainer>
+    <>
       <StatusBar style="auto" />
-      <SafeAreaView style={styles.container}>
-        <LinearGradient 
-          style={styles.gradientContainer} 
+      <NavigationContainer>
+        <LinearGradient
+          style={styles.gradientContainer}
           colors={['#ffffff', '#f3f3f3']}
           locations={[0.8, 1]}
-          >
+        >
           <Tab.Navigator sceneContainerStyle={{ backgroundColor: 'transparent' }} screenOptions={options}>
             <Tab.Screen name='home' component={HomeStack} />
-            <Tab.Screen name='explore' component={Explore} />
+            <Tab.Screen name='Discover' component={Discover} />
             <Tab.Screen name='tickets' component={Tickets} />
             <Tab.Screen name='settings' component={Settings} />
           </Tab.Navigator>
         </LinearGradient>
-      </SafeAreaView>
-    </NavigationContainer>
+      </NavigationContainer>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   gradientContainer: {
     flex: 1

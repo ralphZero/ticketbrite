@@ -6,10 +6,10 @@ import { events } from '../utils/events';
 import EventItem from '../components/event/EventItem';
 import Header from '../components/home/Header';
 
-const Explore = () => {
+const Discover = () => {
     return (
         <View style={styles.wrapper}>
-            <Header title="explore" showUser/>
+            <Header title="discover" showUser/>
             <FlatList
                 ListHeaderComponent={
                     <>
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Explore;
+export default Discover;
