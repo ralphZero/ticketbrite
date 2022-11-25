@@ -5,10 +5,11 @@ import Categories from '../components/categories/Categories';
 import { events } from '../utils/events';
 import EventItem from '../components/event/EventItem';
 import Header from '../components/home/Header';
+import Scaffold from '../components/Scaffold';
 
 const Discover = () => {
     return (
-        <View style={styles.wrapper}>
+        <Scaffold style={styles.wrapper}>
             <Header title="discover" showUser/>
             <FlatList
                 ListHeaderComponent={
@@ -27,14 +28,11 @@ const Discover = () => {
                     </View>
                 )}
             />
-        </View>
+        </Scaffold>
     );
 }
 
 const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1,
-    },
     listItem: {
         marginBottom: 18,
         marginHorizontal: 18,
