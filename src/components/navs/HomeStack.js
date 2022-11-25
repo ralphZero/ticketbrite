@@ -8,8 +8,7 @@ import FloatingHeader from '../event/FloatingHeader';
 const HomeStack = () => {
     const HomeStack = createNativeStackNavigator();
     const options = ({ route }) => ({
-        headerShown: route.name === 'event-screen',
-        header: (props) => <FloatingHeader {...props} />,
+        headerShown: false,
         contentStyle: {
             backgroundColor: 'transparent',
         }

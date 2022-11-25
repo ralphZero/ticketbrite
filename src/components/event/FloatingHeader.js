@@ -1,18 +1,22 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, StatusBar, Platform} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import { values } from '../../utils/constants';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FloatingButton from './FloatingButton';
 import { JamIcon } from '../../utils/icons/JamIcon';
 
+
 const FloatingHeader = ({ back, navigation }) => {
     const [status, setStatus] = useState(false);
+    
+    const insets = useSafeAreaInsets();
 
     const onBackPressed = () => {
        return back ? navigation.goBack() : null
     }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { top: insets.top }]}>
             <FloatingButton onPress={onBackPressed}>
                 <JamIcon color='#3b3d56' name='arrow-left' size={18} />
             </FloatingButton>
@@ -29,9 +33,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: values.size.PADDING,
-        backgroundColor: 'blue',
+        backgroundColor: 'transparent',
         width: '100%',
         zIndex: 10,
+        position: 'absolute',
+        left: 0,
     }
 })
 
